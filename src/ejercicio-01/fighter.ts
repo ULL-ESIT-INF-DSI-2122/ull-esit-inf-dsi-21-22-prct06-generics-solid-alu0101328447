@@ -3,6 +3,10 @@ import { Stats } from './stats'
 const type: string = 'Fuego' || 'Agua' || 'Planta' || 'Tierra' || 'Electrico' ||
                      'Aire' || 'Armas' || 'Psiquico' || 'Magico' || 'Normal'; 
 
+
+/**
+ * # Clase Fighter
+ */
 export abstract class Fighter {
   constructor(private name: string, private weight: number, private height: number, 
     private habilityName: string, private habilityType: string, 
@@ -10,46 +14,94 @@ export abstract class Fighter {
     // Empty method
   }
 
+  /**
+   * 
+   * @returns nombre del luchador
+   */
   getName(): string {
     return this.name;
   }
 
+  /**
+   * 
+   * @returns peso del luchador
+   */
   getWeigth(): number {
     return this.weight;
   }
 
+  /**
+   * 
+   * @returns altura del luchador
+   */
   getHeight(): number {
     return this.height;
   }
 
+  /**
+   * 
+   * @returns nombre de la habilidad de combate del luchador
+   */
   getHabilityName(): string {
     return this.habilityName;
   }
 
+  /**
+   * 
+   * @returns tipo de la habilidad de combate del luchador
+   */
   getHabilityType(): string {
     return this.habilityType;
   }
 
+  /**
+   * 
+   * @returns tipo del luchador
+   */
   getType(): string {
     return this.type
   }
 
+  /**
+   * 
+   * @returns estadisticas del luchador
+   */
   getStats(): Stats {
     return this.stats;
   }
 
+  /**
+   * 
+   * @returns frase tipica del luchador
+   */
   getPhrase(): string {
     return this.cathPrase;
   }
 
+  /**
+   * 
+   * @returns universo al que pertenece el luchador
+   */
   getUniverse(): string {
     return this.universe;
   }
 
+  /**
+   * ## getDmg
+   * ### Calcula el daño que se le inflinge al enemigo teneido en cuenta su defensa
+   * @param fighter Enemigo
+   * @returns Daño inflingido al enemigo sin contar el multiplicador de tipos
+   */
   getDmg(fighter: Fighter): number {
     return Math.floor(50 * (this.stats.attack / fighter.getStats().defense));
   }
 
+  /**
+   * ## typeEfectivity
+   * ### Calcula la ventaja de tipo tomando el tipo de ataque y el tipo de luchador que recibe el ataque
+   * @param fighter Enemigo
+   * @returns el multiplicador de tipo
+   */
   typeEfectivity(fighter: Fighter): number {
     if (this.habilityType == fighter.getType()) {
       return 0.5;

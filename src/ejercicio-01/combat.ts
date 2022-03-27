@@ -6,10 +6,17 @@ import { Marvel } from './marvel'
 import { StarWars } from './starWars'
 import { DragonBall } from './dragonBall'
 
+/**
+ * # Clase Combat
+ */
 export class Combat <T extends (Pokemon | DC | Marvel | StarWars | DragonBall )> {
   constructor(private fighter1: T, private fighter2: T) {
   }
 
+  /**
+   * ## Start
+   * ### Da inicio al combate y muestra lo que sucede por la terminal
+   */
   start() {
     if (this.fighter1.getStats().speed >= this.fighter2.getStats().speed) {     
       if (this.fighter1.getStats().speed > 75) {
@@ -68,6 +75,11 @@ export class Combat <T extends (Pokemon | DC | Marvel | StarWars | DragonBall )>
 
   }
 
+  /**
+   * ## combat result
+   * ### Simula el combate sin mostrar nada por pantalla
+   * @returns Ganador del combate
+   */
   combatResult(): string {
     if (this.fighter1.getStats().speed >= this.fighter2.getStats().speed) { 
       let attack1: number = this.fighter1.getStats().attack;

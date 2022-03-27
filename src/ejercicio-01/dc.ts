@@ -1,12 +1,32 @@
 import { Stats } from './stats';
 import { Fighter } from './fighter'
 
+/**
+ * # Clase DC
+ */
 export class DC extends Fighter {
+  /**
+   * ### Constructor por defecto con los atributos necesarios
+   * @param name 
+   * @param weight 
+   * @param height 
+   * @param habilityName 
+   * @param habilityType 
+   * @param stats 
+   * @param cathPrase 
+   * @param type 
+   */
   constructor(name: string, weight: number, height: number, habilityName: string, 
     habilityType: string, stats: Stats, cathPrase: string, type: string) {
     super(name, weight, height, habilityName, habilityType, stats, cathPrase, type, 'DC');
   }
 
+  /**
+   * ## efectivity
+   * ### Calcula la efectividad dependiendo del tipo y el universo del contrario
+   * @param fighter Enemigo
+   * @returns Multiplicador de tipo
+   */
   efectivity(fighter: Fighter): number {
     let result: number = 1;
 
