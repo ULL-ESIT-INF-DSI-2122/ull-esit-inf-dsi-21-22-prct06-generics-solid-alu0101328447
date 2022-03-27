@@ -8,7 +8,12 @@
     "./src/ejercicio-01/pokedex.ts",
     "./src/ejercicio-01/pokemon.ts",
     "./src/ejercicio-01/starWars.ts",
-    "./src/ejercicio-01/stats.ts"
+    "./src/ejercicio-01/stats.ts",
+    "./src/ejercicio-02/documental.ts",
+    "./src/ejercicio-02/pelicula.ts",
+    "./src/ejercicio-02/serie.ts",
+    "./src/ejercicio-02/stream.ts",
+    "./src/ejercicio-02/StreamCollection.ts"
   ],
   "out": "./docs"
 }

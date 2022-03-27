@@ -2,11 +2,22 @@ import {BasicStreamableCollection} from './StreamCollection'
 import {Stream} from './stream'
 import {Fecha} from './stream'
 
+/**
+ * # Clase Pelicula
+ */
 export class Pelicula extends BasicStreamableCollection<Stream> {
+  /**
+   * 
+   * @param peliculas 
+   */
   constructor(public peliculas: Stream[]) {
     super(peliculas);
   }
 
+  /**
+   * ## titleSearch
+   * ### Busca las peliculas que tienen el titulo @title
+   */
   titleSearch(title: string): Stream[] {
     let result: Stream[] = [];
     for (let i: number = 0; i < this.peliculas.length; i++) {
@@ -18,6 +29,10 @@ export class Pelicula extends BasicStreamableCollection<Stream> {
     return result;
   }
 
+  /**
+   * ## yearSearch
+   * ### Busca las peliculas realizadoes en @date
+   */
   yearSearch(date: Fecha): Stream[] {
     let result: Stream[] = [];
 
@@ -31,6 +46,10 @@ export class Pelicula extends BasicStreamableCollection<Stream> {
     return result;
   }
 
+  /**
+   * ## genreSearch
+   * ### Busca las peliculas del genero @genre
+   */
   genreSearch(genre: string): Stream[] {
     let result: Stream[] = [];
 
@@ -43,6 +62,10 @@ export class Pelicula extends BasicStreamableCollection<Stream> {
     return result;
   }
 
+  /**
+   * ## directorSearch
+   * ### Busca las peliculas dirigidos por @director
+   */
   directorSearch(director: string): Stream[] {
     let result: Stream[] = [];
 
