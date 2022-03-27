@@ -3,8 +3,8 @@ import { Fighter } from './fighter'
 
 export class Pokemon extends Fighter {
   constructor(name: string, weight: number, height: number, habilityName: string, 
-    habilityType: string, stats: Stats, cathPrase: string, private type: string) {
-    super(name, weight, height, habilityName, habilityType, stats, cathPrase, 'Pokemon');
+    habilityType: string, stats: Stats, cathPrase: string, type: string) {
+    super(name, weight, height, habilityName, habilityType, stats, cathPrase, type, 'Pokemon');
   }
 
   efectivity(fighter: Fighter): number {

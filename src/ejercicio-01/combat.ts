@@ -6,7 +6,7 @@ import { Marvel } from './marvel'
 import { StarWars } from './starWars'
 import { DragonBall } from './dragonBall'
 
-class Combat <T extends (Pokemon | DC | Marvel | StarWars | DragonBall )> {
+export class Combat <T extends (Pokemon | DC | Marvel | StarWars | DragonBall )> {
   constructor(private fighter1: T, private fighter2: T) {
   }
 
@@ -39,7 +39,7 @@ class Combat <T extends (Pokemon | DC | Marvel | StarWars | DragonBall )> {
       console.log(`\n\nTurno ${turno}`);
 
       let dmg1: number = Math.floor(this.fighter1.getDmg(this.fighter2) * this.fighter1.efectivity(this.fighter2));
-      console.log(`${this.fighter1.getName()} ataco a ${this.fighter2.getName()} y le quito ${dmg1.toFixed(0)}`);
+      console.log(`${this.fighter1.getName()} ha usado ${this.fighter1.getHabilityName()}`);
       this.fighter2.getStats().HP -= dmg1;
       if (this.fighter2.getStats().HP > 0) {
         console.log(`${this.fighter2.getName()} se quedo a ${this.fighter2.getStats().HP.toFixed(0)}`);
@@ -53,7 +53,7 @@ class Combat <T extends (Pokemon | DC | Marvel | StarWars | DragonBall )> {
 
 
       let dmg2: number = Math.floor(this.fighter2.getDmg(this.fighter1) * this.fighter2.efectivity(this.fighter1));
-      console.log(`${this.fighter2.getName()} ataco a ${this.fighter1.getName()} y le quito ${dmg2.toFixed(0)}`);
+      console.log(`${this.fighter2.getName()}  ha usado ${this.fighter2.getHabilityName()}`);
       this.fighter1.getStats().HP -= dmg2;
       if (this.fighter1.getStats().HP > 0) {
         console.log(`${this.fighter1.getName()} se quedo a ${this.fighter1.getStats().HP.toFixed(0)}`);

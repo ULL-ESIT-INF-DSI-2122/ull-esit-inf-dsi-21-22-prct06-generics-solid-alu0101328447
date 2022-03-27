@@ -3,8 +3,8 @@ import { Fighter } from './fighter'
 
 export class StarWars extends Fighter {
   constructor(name: string, weight: number, height: number, habilityName: string, 
-    habilityType: string, stats: Stats, cathPrase: string, private type: string) {
-    super(name, weight, height, habilityName, habilityType, stats, cathPrase, 'Star Wars');
+    habilityType: string, stats: Stats, cathPrase: string, type: string) {
+    super(name, weight, height, habilityName, habilityType, stats, cathPrase, type, 'Star Wars');
   }
 
   efectivity(fighter: Fighter): number {

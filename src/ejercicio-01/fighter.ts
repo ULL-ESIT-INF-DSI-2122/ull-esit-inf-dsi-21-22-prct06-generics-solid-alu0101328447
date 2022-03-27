@@ -1,12 +1,12 @@
 import { Stats } from './stats'
 
 const type: string = 'Fuego' || 'Agua' || 'Planta' || 'Tierra' || 'Electrico' ||
-                     'Aire' || 'Armas' || 'Psiquico' || 'Magico'; 
+                     'Aire' || 'Armas' || 'Psiquico' || 'Magico' || 'Normal'; 
 
 export abstract class Fighter {
   constructor(private name: string, private weight: number, private height: number, 
     private habilityName: string, private habilityType: string, 
-    private stats: Stats, private cathPrase: string, private universe: string) {
+    private stats: Stats, private cathPrase: string, private type: string, private universe: string) {
     // Empty method
   }
 
@@ -30,6 +30,10 @@ export abstract class Fighter {
     return this.habilityType;
   }
 
+  getType(): string {
+    return this.type
+  }
+
   getStats(): Stats {
     return this.stats;
   }
@@ -43,14 +47,14 @@ export abstract class Fighter {
   }
 
   getDmg(fighter: Fighter): number {
-    return 50 * (this.stats.attack / fighter.getStats().defense);
+    return Math.floor(50 * (this.stats.attack / fighter.getStats().defense));
   }
 
   typeEfectivity(fighter: Fighter): number {
-    if (this.habilityType == fighter.getHabilityType()) {
+    if (this.habilityType == fighter.getType()) {
       return 0.5;
     } else if (this.habilityType == 'Fuego') {
-      switch(fighter.getHabilityType()) { 
+      switch(fighter.getType()) { 
         case 'Planta' || 'Aire' || 'Armas': 
             return 2; 
             break; 
@@ -65,7 +69,7 @@ export abstract class Fighter {
             break; 
       } 
     } else if (this.habilityType == 'Agua') {
-      switch(fighter.getHabilityType()) { 
+      switch(fighter.getType()) { 
         case 'Planta' || 'Tierra' || 'Psiquico': 
             return 0.5; 
             break; 
@@ -80,7 +84,7 @@ export abstract class Fighter {
             break; 
       } 
     } else if (this.habilityType == 'Aire') {
-      switch(fighter.getHabilityType()) { 
+      switch(fighter.getType()) { 
         case 'Agua' || 'Magico': 
             return 2; 
             break; 
@@ -95,13 +99,13 @@ export abstract class Fighter {
             break; 
       } 
     } else if (this.habilityType == 'Tierra') {
-      if (fighter.getHabilityType() != 'Aire') {
+      if (fighter.getType() != 'Aire') {
         return 2; 
       } else {
         return 0.5;
       }
     } else if (this.habilityType == 'Electrico') {
-      if (fighter.getHabilityType() != 'Tierra') {
+      if (fighter.getType() != 'Tierra') {
         return 2; 
       } else {
         return 0.5;
@@ -109,12 +113,12 @@ export abstract class Fighter {
     } else if (this.habilityType == 'Aire') {
       return 2.5;
     } else if (this.habilityType == 'Armas') {
-      if ((fighter.getHabilityType() == 'Magico') && (this.stats.attack > fighter.getStats().attack)){
+      if ((fighter.getType() == 'Magico') && (this.stats.attack > fighter.getStats().attack)){
         return 5; 
       } else {
         return 2;
       }
-    } else {
+    } else if (this.getHabilityType() != 'Normal'){
       return 1.5; // Daño mágico y psiquico
     }
 
