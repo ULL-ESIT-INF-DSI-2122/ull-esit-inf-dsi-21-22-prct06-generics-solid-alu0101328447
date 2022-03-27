@@ -1,6 +1,6 @@
 export type Fecha = {
   year: number,
-  month: string,
+  month: number,
   day: number, 
 }
 

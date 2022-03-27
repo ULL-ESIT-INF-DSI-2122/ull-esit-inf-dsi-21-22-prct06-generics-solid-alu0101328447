@@ -3,15 +3,15 @@ import {Stream} from './stream'
 import {Fecha} from './stream'
 
 export class Documental extends BasicStreamableCollection<Stream> {
-  constructor(private series: Stream[]) {
-    super(series);
+  constructor(public documentales: Stream[]) {
+    super(documentales);
   }
 
   titleSearch(title: string): Stream[] {
     let result: Stream[] = [];
-    for (let i: number = 0; i < this.series.length; i++) {
-      if (this.series[i].title == title) {
-        result.push(this.series[i]);
+    for (let i: number = 0; i < this.documentales.length; i++) {
+      if (this.documentales[i].title == title) {
+        result.push(this.documentales[i]);
       }
     }
 
@@ -21,10 +21,10 @@ export class Documental extends BasicStreamableCollection<Stream> {
   yearSearch(date: Fecha): Stream[] {
     let result: Stream[] = [];
 
-    for (let i: number = 0; i < this.series.length; i++) {
-      if ((this.series[i].date.day == date.day) && (this.series[i].date.month == date.month) 
-      && (this.series[i].date.year == date.year)) {
-        result.push(this.series[i]);
+    for (let i: number = 0; i < this.documentales.length; i++) {
+      if ((this.documentales[i].date.day == date.day) && (this.documentales[i].date.month == date.month) 
+      && (this.documentales[i].date.year == date.year)) {
+        result.push(this.documentales[i]);
       }
     }
 
@@ -34,9 +34,9 @@ export class Documental extends BasicStreamableCollection<Stream> {
   genreSearch(genre: string): Stream[] {
     let result: Stream[] = [];
 
-    for (let i: number = 0; i < this.series.length; i++) {
-      if (this.series[i].genre == genre) {
-        result.push(this.series[i]);
+    for (let i: number = 0; i < this.documentales.length; i++) {
+      if (this.documentales[i].genre == genre) {
+        result.push(this.documentales[i]);
       }
     }
 
@@ -46,9 +46,9 @@ export class Documental extends BasicStreamableCollection<Stream> {
   directorSearch(director: string): Stream[] {
     let result: Stream[] = [];
 
-    for (let i: number = 0; i < this.series.length; i++) {
-      if (this.series[i].director == director) {
-        result.push(this.series[i]);
+    for (let i: number = 0; i < this.documentales.length; i++) {
+      if (this.documentales[i].director == director) {
+        result.push(this.documentales[i]);
       }
     }
 

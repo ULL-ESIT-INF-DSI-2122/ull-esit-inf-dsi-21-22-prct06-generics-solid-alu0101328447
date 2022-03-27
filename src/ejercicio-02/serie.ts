@@ -3,7 +3,7 @@ import {Stream} from './stream'
 import {Fecha} from './stream'
 
 export class Serie extends BasicStreamableCollection<Stream> {
-  constructor(private series: Stream[]) {
+  constructor(public series: Stream[]) {
     super(series);
   }
 
