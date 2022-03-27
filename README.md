@@ -571,6 +571,7 @@ La función encargada de cifrar el mensaje, utiliza una cadena en la que se encu
   
   Por otra parte, la función de descifrado actúa de la misma manera que la función de cifrado, pero en vez de sumando los valores de la clave, se restan. Por esto mismo, para evitar valores negativos se le suma al resultado de esa resta 27. 
   
+```
   /**
    * 
    * @returns mensaje descifrado
