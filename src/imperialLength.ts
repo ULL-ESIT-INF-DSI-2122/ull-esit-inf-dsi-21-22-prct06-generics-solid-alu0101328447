@@ -8,31 +8,31 @@ export class ImperialLength {
     return this.yarda * 36;
   };
 
-  setPulgada(pulgada: number) {
+  setPulgadas(pulgada: number) {
     this.yarda = pulgada / 36;
   };
 
-  getPie(): number {
+  getPies(): number {
     return this.yarda * 3;
   };
 
-  setPie(pie: number) {
+  setPies(pie: number) {
     this.yarda = pie / 3;
   };
 
-  getYarda(): number {
+  getYardas(): number {
     return this.yarda;
   };
 
-  setYarda(yarda: number) {
+  setYardas(yarda: number) {
     this.yarda = yarda;
   };
 
-  getMilla(): number {
+  getMillas(): number {
     return this.yarda / 1760 ;
   };
 
-  setMilla(milla: number) {
+  setMillas(milla: number) {
     this.yarda = milla * 1760;
   };
 };
