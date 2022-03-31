@@ -1,27 +1,47 @@
 
 export class ImperialMass {
-  constructor(private onzas: number = 0, private libras: number = 0, 
-    private piedras: number = 0, private centenas: number = 0, private toneladas: number = 0) {
+
+  constructor(private libras: number = 0) {
       // Empty method
   }
 
   public getOnzas(): number {
-    return this.onzas;
+    return this.libras * 16;
+  };
+
+  public setOnzas(onzas: number) {
+    this.libras = onzas / 16;
   };
 
   public getLibras(): number {
     return this.libras;
   };
 
+  public setLibras(libras: number) {
+    this.libras = libras;
+  };
+
   public getPiedras(): number {
-    return this.piedras;
+    return this.libras / 14;
+  };
+
+  public setPiedras(piedras: number) {
+    this.libras = piedras * 14;
   };
 
   public getCentenas(): number {
-    return this.centenas;
+    return this.libras / 112;
   };
 
+  public setCentenas(centenas: number) {
+    this.libras = centenas * 112;
+  }
+
   public getToneladas(): number {
-    return this.toneladas;
+    return this.getCentenas() / 20;
   };
+
+  public setToneladas(toneladas: number) {
+    this.setCentenas(toneladas * 20); 
+  }
 };
