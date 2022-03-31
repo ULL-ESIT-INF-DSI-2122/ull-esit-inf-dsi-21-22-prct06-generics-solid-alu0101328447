@@ -1,6 +1,11 @@
 {
   "entryPoints": [
-    "./src/ejercicio-01.ts"
+    "./src/adapterLength.ts",
+    "./src/adapterMass.ts",
+    "./src/imperialLength.ts",
+    "./src/imperialMass.ts",
+    "./src/metricLength.ts",
+    "./src/metricMass.ts"
   ],
   "out": "./docs"
 }
