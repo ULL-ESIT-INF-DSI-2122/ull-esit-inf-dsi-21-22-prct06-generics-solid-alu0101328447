@@ -11,6 +11,18 @@ export abstract class PokemonCreator {
   public abstract factoryMethod(): Pokemon;
   
   
+  /**
+   * Logic that relies on TwoDimensionalFigure objects returned by
+   * the factory method. Subclasses can change this logic indirectly
+   * by overriding the factory method and returning a different
+   * TwoDimensionalFigure object.
+   */
+  public logic(): string {
+    const Pokemon = this.factoryMethod();
+    return `Soy ${Pokemon.getName()}`;
+  }
+
+
   /*
    * 
    * @param pokemon 
