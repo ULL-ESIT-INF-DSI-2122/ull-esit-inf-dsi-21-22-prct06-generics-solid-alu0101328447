@@ -5,9 +5,9 @@ name: test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ mod3 ]
   pull_request:
-    branches: [ main ]
+    branches: [ mod3 ]
 
 jobs:
   build:
