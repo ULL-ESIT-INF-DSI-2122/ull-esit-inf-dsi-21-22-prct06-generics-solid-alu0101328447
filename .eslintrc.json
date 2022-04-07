@@ -18,5 +18,6 @@
         "quotes": "off",
         "require-jsdoc": "off", 
         "valid-jsdoc": "off"
+        
     }
 }
