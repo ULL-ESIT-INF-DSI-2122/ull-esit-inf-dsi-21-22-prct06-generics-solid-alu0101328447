@@ -1,20 +1,16 @@
 {
   "entryPoints": [
-    "./src/ejercicio-01/combat.ts",
-    "./src/ejercicio-01/dc.ts",
-    "./src/ejercicio-01/dragonBall.ts",
-    "./src/ejercicio-01/fighter.ts",
-    "./src/ejercicio-01/marvel.ts",
-    "./src/ejercicio-01/pokedex.ts",
-    "./src/ejercicio-01/pokemon.ts",
-    "./src/ejercicio-01/starWars.ts",
-    "./src/ejercicio-01/stats.ts",
-    "./src/ejercicio-02/documental.ts",
-    "./src/ejercicio-02/pelicula.ts",
-    "./src/ejercicio-02/serie.ts",
-    "./src/ejercicio-02/stream.ts",
-    "./src/ejercicio-02/StreamCollection.ts",
-    "./src/ejercicio-03/cifrado.ts"
+    "./src/electricPokemon.ts",
+    "./src/electricPokemonCreator.ts",
+    "./src/firePokemon.ts",
+    "./src/firePokemonCreator.ts",
+    "./src/grassPokemon.ts",
+    "./src/grassPokemonCreator.ts",
+    "./src/waterPokemon.ts",
+    "./src/waterPokemonCreator.ts",
+    "./src/pokemon.ts",
+    "./src/pokemonCreator.ts",
+    "./src/stats.ts"
   ],
   "out": "./docs"
 }
